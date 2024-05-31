@@ -18,21 +18,21 @@ DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_PORT = os.getenv("DB_PORT")
 
-# # Définir les origines autorisées
-# origins = [
-#     "http://localhost",
-#     "http://localhost:8501",
-#     "http://127.0.0.1:8501",
-#     "https://render-deploiement.onrender.com/"
-# ]
+# Définir les origines autorisées
+origins = [
+    "http://localhost",
+    "http://localhost:8501",
+    "http://127.0.0.1:8501",
+    "https://render-deploiement.onrender.com/"
+]
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Définition de la classe modèle pour les données d'entrée
 class PredictionInput(BaseModel):
